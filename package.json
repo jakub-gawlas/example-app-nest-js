@@ -1,0 +1,23 @@
+{
+  "name": "nest-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "develop": "nodemon -e ts index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nest.js": "^1.0.3",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.18"
+  }
+}
