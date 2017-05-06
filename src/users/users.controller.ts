@@ -1,11 +1,12 @@
+import { Response, Request } from '@types/express';
 import { 
   Controller, 
   Get, 
   Post, 
   HttpException,
   HttpStatus, 
-  Response, 
-  Request,
+  Response as Res, 
+  Request as Req,
   Param,
   Body,
 } from 'nest.js';
@@ -19,7 +20,7 @@ export class UsersController {
 
   @Get()
   async getAllUsers(
-    @Response() res,
+    @Res() res: Response,
   ){
     const users = await this.usersService.getAllUsers();
     res.status(HttpStatus.OK).json(users);
@@ -27,7 +28,7 @@ export class UsersController {
 
   @Get('/:id')
   async getUser(
-    @Response() res, 
+    @Res() res: Response, 
     @Param('id') id,
   ){
     const user = await this.usersService.getUser(Number(id));
@@ -39,8 +40,8 @@ export class UsersController {
 
   @Post()
   async addUser(
-    @Response() res,
-    @Request() req,
+    @Res() res: Response,
+    @Req() req: Request,
     @Body('name') name,
     @Body('age') age
   ){
